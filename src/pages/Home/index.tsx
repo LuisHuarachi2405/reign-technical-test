@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from '../../components/Card';
+import { Card, Pagination, Select, Tapbar } from '../../components';
 import { useAsync, useFetchAndLoad } from '../../hooks';
 import { Hit, Search } from '../../models';
 import { getPostsAngular } from '../../services/search.service';
@@ -20,23 +20,23 @@ const Home = () => {
   return (
     <>
       <div className={styles.main}>
-        <div>header</div>
+        <div>Hacker News</div>
         <div className={styles.container}>
           <div className={styles.inner}>
-            <div className={styles.tapbar}>tapbar</div>
-            <div className={styles.select}>input select</div>
+            <Tapbar/>
+            <Select/>
             <div className={styles.posts}>
               {
                 loading ? 'loading'
                 :
                 data?.hits.map(value =>{
                   return (
-                    <Card comment={value.comment_text} author={value.author} created_comment={value.created_at} />
+                    <Card story_url={''} story_title={value.story_title} author={value.author} created_at={value.created_at} />
                   )
                 })
               }
             </div>
-            <div>pagination</div>
+            <Pagination />
           </div>
         </div>
       </div>

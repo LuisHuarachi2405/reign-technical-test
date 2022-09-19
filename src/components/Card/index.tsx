@@ -1,22 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import styles from './index.module.scss'
 
 interface propsCard {
-  comment: String,
+  story_title: String,
+  story_url: String,
   author: String,
-  created_comment: Date
+  created_at: Date
 }
 
-const Card = ({comment, author, created_comment}: propsCard) => {
-  const commentRef = useRef<HTMLSpanElement>(null);
-  const [commentHtml, setCommentHtml] = useState(comment);
-
-  useEffect(() => {
-    if (commentRef.current) {
-      commentRef.current.innerHTML = String(commentHtml);
-    }
-  }, [commentRef, commentHtml]);
-
+const Card = ({story_title, story_url, author, created_at}: propsCard) => {
 
   const IconHeart = () => {
     return(
@@ -33,8 +25,8 @@ const Card = ({comment, author, created_comment}: propsCard) => {
           <div className={styles.cardInfoTop}>
             3 hours ago by {author}
           </div>
-          <div className={styles.cardComment}>
-            <span ref={commentRef} />
+          <div className={styles.cardTitle}>
+            {story_title}
           </div>
         </div>
         <div className={styles.cardContentRight}>

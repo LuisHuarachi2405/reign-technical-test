@@ -1,0 +1,27 @@
+.pagination {
+  &List {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  &ListItem {
+    margin: 0 4px;
+  }
+
+  &Link {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    text-decoration: none;
+
+    &Select {
+      background-color: #1890ff;
+      border-color: #1890ff;
+      color: #fff;
+    }
+  }
+}
