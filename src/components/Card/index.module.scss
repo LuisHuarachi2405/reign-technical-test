@@ -6,8 +6,13 @@
   flex-basis: 50%;
   overflow: hidden;
 
+  &:hover {
+    opacity: 0.4;
+  }
+
   &Inner {
     display: flex;
+    height: 100%;
     justify-content: space-between;
   }
 
@@ -15,16 +20,24 @@
     padding: 16px 26px 14px;
     display: flex;
     flex-wrap: wrap;
+    color: #6b6b6b;
+    text-decoration: none;
   }
 
   &ContentRight {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     max-width: 72px;
-    flex-basis: 72px;
     height: 100%;
     background-color: rgba(#606060, 0.06);
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &ButtonLike {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
   }
 }

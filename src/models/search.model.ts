@@ -20,21 +20,10 @@ export interface Exhaustive {
 
 export interface Hit {
   created_at:       Date;
-  title:            null;
-  url:              null;
-  author:           string;
-  points:           null;
-  story_text:       null;
-  comment_text:     string;
-  num_comments:     null;
-  story_id:         number;
-  story_title:      string;
-  story_url:        string;
-  parent_id:        number;
-  created_at_i:     number;
-  _tags:            string[];
-  objectID:         string;
-  _highlightResult: HighlightResult;
+  author:           String;
+  story_title:      String;
+  story_url:        String;
+  favorite:         boolean
 }
 
 export interface HighlightResult {
