@@ -1,10 +1,14 @@
-import { Fragment, useContext } from 'react';
+import { Fragment, useEffect, useContext } from 'react';
 import { Card } from '../../components';
 import { GlobalContext } from '../../context/globalState';
 import { Hit } from '../../models';
 
 const Favorites = () => {
   const { hits } = useContext(GlobalContext);
+
+  useEffect(() => {    
+    localStorage.setItem("hits", JSON.stringify(hits))
+  }, [hits]);
 
   return (
     <Fragment>

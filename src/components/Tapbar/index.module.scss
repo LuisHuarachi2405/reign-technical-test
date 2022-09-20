@@ -1,6 +1,16 @@
+@import 'mq-scss/mq';
+
+$sm: 640px;
+$md: 1024px;
+$lg: 1440px;
+
 .tapbar {
   margin-bottom: 63px;
   padding-top: 70px;
+
+  @include mq(max, $sm){
+    margin-bottom: 38px;
+  }
   
   &Inner {
     display: flex;

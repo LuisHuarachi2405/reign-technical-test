@@ -42,24 +42,17 @@ const DropdownSelect = () => {
     setSelectedOption(value);
     setIsOpen(false);
     updateFilterUrl(value.value)
-    console.log(selectedOption);
   }
 
   useEffect(() => {
     if(filterUrl) {
-      console.log('haciendo filter');
-      
       let optionState = options.filter(option => {
         if(option.value === filterUrl){
           return option
         }
       })
-
-      console.log('opiton sle', optionState);
       
       setSelectedOption(optionState[0])
-      console.log("data opstio  sele", selectedOption);
-      
     }
   }, []);
 
@@ -76,25 +69,25 @@ const DropdownSelect = () => {
   }
   
   const Dropdown = ({ images, label, value, options, isOpen, setIsOpen, handleOptionSelect }: any) => {
-    console.log("data dorpdown", label, value, images);
-    
     return (
-      <div onClick={setIsOpen} className={styles.dropdown}>
-        <div className={styles.dropdownContent}>
-          { images && (<img className={styles.dropdownOptionImg} src={images[0]} srcSet={`${images[1]}, ${images[2]}`} alt='icon option' />)}
-          <Font classname={styles.dropdownSelectLabel} type={'text'}>
-            {label} 
-          </Font>
+      <div className={styles.dropdownContainer}>
+        <div onClick={setIsOpen} className={styles.dropdown}>
+          <div className={styles.dropdownContent}>
+            { images && (<img className={styles.dropdownOptionImg} src={images[0]} srcSet={`${images[1]}, ${images[2]}`} alt='icon option' />)}
+            <Font classname={styles.dropdownSelectLabel} type={'text'}>
+              {label} 
+            </Font>
+          </div>
+          {
+            isOpen && (
+              <div className={styles.dropdownOptions}>
+                {options.map((option:any) => (
+                  <Option key={option.value} handleOptionSelect={handleOptionSelect} value={option.value} images={option.images} label={option.label}/>
+                ))}
+              </div>
+            )
+          }
         </div>
-        {
-          isOpen && (
-            <div className={styles.dropdownOptions}>
-              {options.map((option:any) => (
-                <Option key={option.value} handleOptionSelect={handleOptionSelect} value={option.value} images={option.images} label={option.label}/>
-              ))}
-            </div>
-          )
-        }
       </div>
     );
   }

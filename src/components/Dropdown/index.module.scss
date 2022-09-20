@@ -1,5 +1,20 @@
+@import 'mq-scss/mq';
+
+$sm: 640px;
+$md: 1024px;
+$lg: 1440px;
+
 .dropdown {
   margin-bottom: 38px;
+
+  &Container {
+    display: flex;
+    width: 100%;
+
+    @include mq(max, $md){
+      justify-content: center;
+    }
+  }
 
   $this: &;
   border-radius: 4px;
@@ -7,7 +22,8 @@
   background-color: #fff;
   color: #343434;
   font-size: 14px;
-  max-width: 140px;
+  width: 100%;
+  max-width: 240px;
   padding: 7px 12px;
   display: flex;
   justify-content: space-between;

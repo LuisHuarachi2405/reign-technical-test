@@ -1,6 +1,5 @@
-import React from 'react';
-import { Routes, BrowserRouter, Route, useLocation } from 'react-router-dom';
-import { Pagination, DropdownSelect, Tapbar } from './components';
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
+import { DropdownSelect, Tapbar } from './components';
 import { GlobalProvider } from './context/globalState';
 import Favorites from './pages/Favorites';
 import Home from './pages/Home';
@@ -21,7 +20,6 @@ const App = () => {
                   <Route path='/favorites' element={<Favorites/>}/>
                 </Routes>
               </div>
-              <Pagination/>
             </div>
           </div>
         </div>  

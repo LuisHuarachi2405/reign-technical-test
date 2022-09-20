@@ -22,12 +22,27 @@ const Card = ({story_title, story_url, objectID, author, created_at, favorite = 
       </svg>
     )
   }
+  
+  const IconClock = () => {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <path fill="#606060" d="M8 1.333c3.676 0 6.667 2.991 6.667 6.667 0 3.676-2.991 6.667-6.667 6.667-3.676 0-6.667-2.991-6.667-6.667 0-3.676 2.991-6.667 6.667-6.667zM8 0C3.582 0 0 3.582 0 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm.667 8V4H7.333v5.333H12V8H8.667z"/>
+      </svg>
+    )
+  }
 
-  const handleLikeButton = () => {
-    like ? 
-    removeFavorites(objectID) : 
-    addFavorites({story_title, objectID, story_url, author, created_at, favorite: true})
+  const toogleLike = () => {
     setLike(!like)
+  }
+
+  const handleLikeAddButton = () => {
+    addFavorites({story_title, objectID, story_url, author, created_at, favorite: true}) 
+    toogleLike()
+  }
+
+  const handleLikeRemoveButton = () => {
+    removeFavorites(objectID)
+    toogleLike()
   }
 
   const convertCreateAt = () => {
@@ -52,7 +67,7 @@ const Card = ({story_title, story_url, objectID, author, created_at, favorite = 
         <a href={`${story_url}`} className={styles.cardContentLeft} target="_blank" rel="noreferrer">
           <div className={styles.cardInfoTop}>
             <Font type={'text'} classname={styles.cardInfoCopyTop}>
-              {hoursCreateAt > 0 ? hoursCreateAt : minsCreateAt} {hoursCreateAt > 0 ? 'hours' : 'minuts'} ago by {author}
+              <IconClock/> {hoursCreateAt > 0 ? hoursCreateAt : minsCreateAt} {hoursCreateAt > 0 ? 'hours' : 'minuts'} ago by {author}
             </Font>
           </div>
           <div className={styles.cardTitle}>
@@ -62,7 +77,7 @@ const Card = ({story_title, story_url, objectID, author, created_at, favorite = 
           </div>
         </a>
         <div className={styles.cardContentRight}>
-          <button className={styles.cardButtonLike} onClick={handleLikeButton}>
+          <button className={styles.cardButtonLike} onClick={like ? handleLikeRemoveButton : handleLikeAddButton }>
             <IconHeart like={like} />
           </button>
         </div>

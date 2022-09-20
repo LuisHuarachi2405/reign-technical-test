@@ -18,7 +18,7 @@ const Home = () => {
 
   useAsync(getApiData, adaptSearch, () => {}, [filterUrl])
 
-  useEffect(() => {
+  useEffect(() => {    
     localStorage.setItem("hits", JSON.stringify(hits))
   }, [hits]);
 
