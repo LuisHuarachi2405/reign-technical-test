@@ -1,0 +1,30 @@
+@import 'mq-scss/mq';
+
+$sm: 640px;
+$md: 1024px;
+$lg: 1440px;
+
+.main {
+  background-color: #fcfcfc;
+}
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: auto;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 96px;
+
+  @include mq(max, $lg){
+    gap: 25px;
+  }
+
+  @include mq(max, $sm){
+    margin-bottom: 38px;
+  }
+}

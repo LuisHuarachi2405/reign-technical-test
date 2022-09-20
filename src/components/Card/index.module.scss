@@ -1,0 +1,77 @@
+@import 'mq-scss/mq';
+
+$sm: 640px;
+$md: 1024px;
+$lg: 1440px;
+
+.card {
+  border-radius: 6px;
+  border: solid 1px rgba(#979797, 0.8);
+  background-color: #fff;
+  max-width: 548px;
+  flex-basis: 50%;
+  overflow: hidden;
+
+  @include mq(max, $lg){
+    flex-basis: 48%;
+  }
+
+  @include mq(max, $sm){
+    flex-basis: 100%;
+  }
+
+  &:hover {
+    opacity: 0.4;
+  }
+
+  &Inner {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  &ContentLeft {
+    padding: 16px 26px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: #6b6b6b;
+    text-decoration: none;
+  }
+
+  &ContentRight {
+    display: flex;
+    width: 100%;
+    max-width: 72px;
+    height: 100%;
+    background-color: rgba(#606060, 0.06);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &ButtonLike {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+  }
+
+  &Title {
+    font-family: 'Roboto-Medium';
+  }
+
+  &InfoTop {
+    margin-bottom: 7px;
+  }
+
+  &InfoCopyTop {
+    font-size: 11px;
+    color: #767676;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+}

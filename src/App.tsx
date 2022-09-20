@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
+import { DropdownSelect, Tapbar } from './components';
+import { GlobalProvider } from './context/globalState';
+import Favorites from './pages/Favorites';
+import Home from './pages/Home';
+import styles from './app.module.scss'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <BrowserRouter>
+        <div className={styles.main}>
+          <div className={styles.container}>
+            <div className={styles.inner}>
+              <Tapbar/>
+              <DropdownSelect/>
+              <div className={styles.posts}>
+                <Routes>
+                  <Route path='/' element={<Home/>}/>
+                  <Route path='/favorites' element={<Favorites/>}/>
+                </Routes>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </BrowserRouter> 
+    </GlobalProvider>
   );
 }
 

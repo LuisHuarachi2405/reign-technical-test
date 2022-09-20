@@ -1,0 +1,39 @@
+@import 'mq-scss/mq';
+
+$sm: 640px;
+$md: 1024px;
+$lg: 1440px;
+
+.tapbar {
+  margin-bottom: 63px;
+  padding-top: 70px;
+
+  @include mq(max, $sm){
+    margin-bottom: 38px;
+  }
+  
+  &Inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  &Link {
+    width: 98px;
+    border-radius: 2px;
+    border: solid 1px #d6d6d6;
+    text-align: center;
+    font-size: 16px;
+    padding: 6px 0;
+    text-decoration: none;
+    color: #606060;
+
+    &Select {
+      border-color: #1797ff;
+      color: #1797ff;
+    }
+  }
+
+  &LinkCopy {
+    font-size: 16px;
+  }
+}
