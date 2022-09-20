@@ -1,4 +1,7 @@
 .tapbar {
+  margin-bottom: 63px;
+  padding-top: 70px;
+  
   &Inner {
     display: flex;
     justify-content: center;
@@ -18,5 +21,9 @@
       border-color: #1797ff;
       color: #1797ff;
     }
+  }
+
+  &LinkCopy {
+    font-size: 16px;
   }
 }

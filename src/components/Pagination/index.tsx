@@ -1,8 +1,9 @@
 import styles from './index.module.scss'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import cx from 'classnames'
 
 const Pagination = () => {
+
   return ( 
     <div className={styles.pagination}>
       <div className={styles.paginationInner}>

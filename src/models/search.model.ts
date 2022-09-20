@@ -7,8 +7,8 @@ export interface Search {
   exhaustiveNbHits:    boolean;
   exhaustiveTypo:      boolean;
   exhaustive:          Exhaustive;
-  query:               string;
-  params:              string;
+  query:               String;
+  params:              String;
   processingTimeMS:    number;
   processingTimingsMS: ProcessingTimingsMS;
 }
@@ -23,7 +23,8 @@ export interface Hit {
   author:           String;
   story_title:      String;
   story_url:        String;
-  favorite:         boolean
+  favorite:         boolean;
+  objectID:         String
 }
 
 export interface HighlightResult {
@@ -34,9 +35,9 @@ export interface HighlightResult {
 }
 
 export interface Author {
-  value:             string;
+  value:             String;
   matchLevel:        MatchLevel;
-  matchedWords:      string[];
+  matchedWords:      String[];
   fullyHighlighted?: boolean;
 }
 

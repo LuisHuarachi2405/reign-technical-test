@@ -1,6 +1,6 @@
 .card {
   border-radius: 6px;
-  border: solid 1px #979797;
+  border: solid 1px rgba(#979797, 0.8);
   background-color: #fff;
   max-width: 548px;
   flex-basis: 50%;
@@ -20,6 +20,7 @@
     padding: 16px 26px 14px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     color: #6b6b6b;
     text-decoration: none;
   }
@@ -39,5 +40,18 @@
     height: 100%;
     border: none;
     outline: none;
+  }
+
+  &Title {
+    font-family: 'Roboto-Medium';
+  }
+
+  &InfoTop {
+    margin-bottom: 7px;
+  }
+
+  &InfoCopyTop {
+    font-size: 11px;
+    color: #767676;
   }
 }
